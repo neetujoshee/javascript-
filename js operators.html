@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js operators</title>
+</head>
+<body>
+    <script>
+        // Arithmetic Operators
+let a = 10;
+let b = 5;
+console.log("Arithmetic Operators:");
+console.log("a + b =", a + b); // Addition
+console.log("a - b =", a - b); // Subtraction
+console.log("a * b =", a * b); // Multiplication
+console.log("a / b =", a / b); // Division
+console.log("a % b =", a % b); // Modulus
+console.log("a ** b =", a ** b); // Exponentiation)
+
+
+// Assignment Operators
+let x = 10;
+console.log("\nAssignment Operators:");
+x += 5; // x = x + 5
+console.log("x += 5", x);
+x -= 3; // x = x - 3
+console.log("x -= 3", x);
+x *= 2; // x = x * 2
+console.log("x *= 2", x);
+x /= 4; // x = x / 4
+console.log("x /= 4", x);
+x %= 3; // x = x % 3
+console.log("x %= 3", x);
+x **= 2; // x = x ** 2 exponentiation
+console.log("x **= 2", x);
+
+
+// Comparison Operators
+let y = 20;
+console.log("\nComparison Operators:");
+console.log("a == b", a == b); // Equals to
+console.log("a === b", a === b); // equal and of same type
+console.log("a != b", a != b); //Not equal to
+console.log("a !== b", a !== b); // Not identical
+console.log("a > b", a > b); // Greater Than
+console.log("a < b", a < b); // Less Than
+console.log("a >= b", a >= b); // Greater Than or Equal
+console.log("a <= b", a <= b); // Less Than or Equal
+
+
+// Logical Operators
+let c = true;
+let d = false;
+console.log("\nLogical Operators:");
+console.log("c && d", c && d); // Logical AND
+console.log("c || d", c || d); // Logical OR
+console.log("!c", !c); // Logical NOT
+
+
+// Bitwise Operators
+let e = 5; // 0101 in binary
+let f = 3; // 0011 in binary
+console.log("\nBitwise Operators:");
+console.log("e & f", e & f); // Bitwise AND (0011)
+console.log("e | f", e | f); // Bitwise OR (0111)
+console.log("e ^ f", e ^ f); // Bitwise XOR (0100)
+console.log("~e", ~e); // Bitwise NOT (~0101 = 1010, or -6 in decimal)
+console.log("e << 1", e << 1); // Left Shift (1010, or 10 in decimal)
+console.log("e >> 1", e >> 1); // Right Shift (0010, or 2 in decimal)
+console.log("e >>> 1", e >>> 1); // Unsigned Right Shift (0010, or 2 in decimal)
+
+//special operators
+// 1. Unary Operators
+console.log("\n Unary Operators:");
+console.log("-a", -a); // Unary negation
+console.log("+a", +a); // Unary positive
+console.log("++a", ++a); // Pre-increment
+console.log("a++", a++); // Post-increment
+console.log("--a", --a); // Pre-decrement
+console.log("a--", a--); // Post-decrement
+console.log("typeof a", typeof a); // Type of operator
+console.log("void 0", void 0); // Void operator (undefined value)
+
+// 2.Conditional (Ternary) Operator(?:)
+//It returs value based on conditions like if-else.
+let age = 18;
+let isAdult = (age >= 18) ? 'Yes' : 'No';
+console.log("\nTernary Operator:");
+console.log("age >= 18 ? 'Yes' : 'No'", isAdult);
+
+// 3.Comma Operator [allows multiple expressions to be evaluated as single statement]
+let result = (1 + 2, 3 + 4);
+console.log("\nComma Operator:");
+console.log("Result of (1 + 2, 3 + 4)", result); // Output: 7
+
+// 4. Delete Operator
+// I deletes the property from the objects
+let person = { name: 'Alice', age: 25 };
+delete person.age;
+console.log("\nDelete Operator:");
+console.log("after delete operation:", person); // Output: { name: 'Alice' }
+
+// 5.In Operator
+//It checks if the objects has the given property or not
+console.log("\nIn Operator:");
+console.log("'name' in person", 'name' in person); // Output: true
+console.log("'age' in person", 'age' in person); // Output: false
+
+// 6.Instanceof Operator
+//checks if the object is the instance of the given type
+console.log("\nInstanceof Operator:");
+console.log("person instanceof Object", person instanceof Object); // Output: true
+
+// 7. New Operator
+let newPerson = new Object();
+newPerson.name = 'Bob';
+console.log("\nNew Operator:");
+console.log("New person object:", newPerson); // Output: { name: 'Bob' }
+
+// 8.Void Operator
+console.log("\nVoid Operator:");
+console.log("Void 0", void 0); // Output: undefined
+
+//9. yield operator
+// it checks what is return in a generator by the generator's iterator
+function* generatorFunction() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+console.log("\nYield Operator:");
+const gen = generatorFunction();
+console.log("First yield:", gen.next().value); // Output: 1
+console.log("Second yield:", gen.next().value); // Output: 2
+console.log("Third yield:", gen.next().value); // Output: 3
+console.log("Done status:", gen.next().done); // Output: true
+
+    </script>
+</body>
+</html>
