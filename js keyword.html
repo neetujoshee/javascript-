@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Keywords</title>
+</head>
+<body>
+
+<!-- JS Expression: A combination of values, variables, and operators that computes a value.
+     Examples:
+     z = a + b;
+     result = 10 - 5; 
+-->
+<h3>JS Camel Case</h3>
+<p>
+    1. Underscore: first_name, last_name <br>
+    2. Upper Camel Case: FirstName, GetElementByID <br>
+    3. Lower Camel Case: Starts with a lowercase letter: javaScript, firstName
+</p>
+
+<h3>Variables in JavaScript</h3>
+<p>
+    1. Automatically (implicit declaration) <br>
+    2. Using `var`; if you support old browsers <br>
+    3. Using `let`; if you need block-scoped variables <br>
+    4. Using `const`; if the value should not be changed <br>
+</p>
+
+<script>
+    // local variable
+    function variables() 
+    {
+        var x = 100;
+        let y = 200;
+        const z = 500;
+        let result = x - y;
+        document.write(result);
+ }  
+variables();
+</script>
+</body>
+</html>
