@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Primitive Data Types
+    // Number
+    let num = 42;
+    document.write(typeof num); // Output: "number"
+    
+    // String
+    let str = "Hello, World!";
+    document.write(typeof str); // Output: "string"
+    
+    // Boolean
+    let isTrue = true;
+    document.write(typeof isTrue); // Output: "boolean"
+    
+    // Undefined
+    let undef;
+    document.write(typeof undef); // Output: "undefined"
+    
+    // Null
+    let nul = null;
+    document.write(typeof nul); // Output: "object" (this is a known quirk in JavaScript)
+    
+    // Symbol
+    let sym = Symbol();
+    document.write(typeof sym); // Output: "symbol"
+    
+    // BigInt
+    let bigIntNum = 1234567890123456789012345678901234567890n;
+    document.write(typeof bigIntNum); // Output: "bigint"
+    
+    // Non-Primitive Data Types
+    
+    // Object
+    let obj = { name: 'nits', age: 22 };
+    document.write(typeof obj); // Output: "object"
+    
+    // Array (also an object)
+    let arr = [1, 2, 3, 4, 5];
+    document.write(typeof arr); // Output: "object"
+
+    // Date
+    let date = new Date();
+    document.write(typeof date); // Output: "object"
+    
+    // RegExp
+    let regex = /ab+c/;
+    document.write(typeof regex); // Output: "object"
+    </script>
+    
+      
+</body>
+</html>
