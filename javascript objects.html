@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript objects</title>
+</head>
+<body>
+    <h2> Javascript objects</h2>
+    THREE WAY ARE THERE OF DEFINING JAVASCRIPT OBJECTS<BR>
+        <ol>
+            <LI> by object Literal</LI>
+            <li> by creating instance of object directly</li>
+            <li> by using an object constructor</li>
+        </OL>
+        <hr>
+
+        <ol><li>
+           <h2>by object literal</h2>
+        </li></ol>
+        <script>
+    ///syntax: object_name={property_name: value,};
+var emp={
+    id:100,
+    name:"hawa",
+    character:"padantey",
+};
+document.write(emp.id+""+emp.name+""+emp.character);
+</script>
+</body>
+<h2> <li> By creating instance of objects</li></h2> 
+<!-- SYNTAX:: var objectname=new Object();-->
+ <script>
+    var emp= new Object();
+    emp.id=101;
+    emp.name="nits";
+    emp.salary="10328492";
+document.write(emp.id+""+emp.name+""+emp.salary);
+ </script>
+<h2>by using an object constructor</h2>
+<p>
+the purpose is to create a new object <br> 
+set the values for any object properties. in this<br>
+function with args is created.
+<br> It uses "THIS" keyword to refer current object.
+</p>
+<script>
+ function emp(id,name,salary)
+ {
+    this.id=id;
+    this.name=name;
+    this.salary=salary;
+ }
+ e= new emp(100,"don",2) // defining new object 
+ // move the new object ourside the constructor
+ document.write(e.id+""+e.name+""+e.salary);
+</script>
+
+<h2> Defining method in js</h2>
+<p> to add property in the function w same name as method</p>
+<script>
+    function emp(id,name,salary)
+    {
+        this.id=id;
+        this.name=name;
+        this.salary=salary;
+    this.update=function(newid,newname,newsalary)
+//The update method is now assigned to this.update inside the 
+//constructor, making it accessible from the instance of the object.
+    {
+        this.id=newid;
+        this.name=newname;
+        this.salary=newsalary;
+    }
+}
+    var e=new emp(100,"dondidi",5000);
+    document.write(e.name+""+e.id+""+e.salary+"<br>");
+    e.update(105,"dididon",6000); 
+    //dont do e.update= wronggg wrongg
+    document.write(e.name+""+e.id+""+e.salary);
+</script>
+</body>
+</html>
