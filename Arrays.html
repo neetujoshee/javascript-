@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+<style>
+    span{
+        color: darkgreen;    
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+
+
+</head>
+<body>
+    <h1> Array</h1>
+    <p> 1. It is an object that represents a collection of <br>
+    similar type of elements. <br>
+2. It is a special variable that holds more than one value at<br>
+a time. <br>
+3.there are three ways to construct an array<br>
+<span>
+i. Conventional array<br>
+ii. Condensed Array<br>
+iii. Literal array</p>
+</span>
+
+<h4> Conventional Arrays</h4>
+syntax: var name=newarray(); <br>
+it creates an empty array.<br>
+    <script>
+        var arr1 = new Array(1, 2, 3); // Conventional array
+        document.write("Conventional Array: " + arr1 + "<br>");
+    </script>
+    
+    <h3>2. Condensed Array</h3>
+    It creates an array with some length<br>
+    but the slots are empty.<br>
+    <script>
+        var arr2 = new Array(3); // Condensed array (creates an array with 3 empty slots)
+        document.write("Condensed Array Length: " + arr2.length + "<br>");
+    </script>
+    
+    <h3>3. Literal Array</h3>
+    Common way to create an array.<br>
+    c=Creates an array with the element 1,2,3<br>
+    <script>
+        var arr3 = [1, 2, 3]; // Literal array
+        document.write("Literal Array: " + arr3 + "<br>");
+</script>
+</body>
+</html>
