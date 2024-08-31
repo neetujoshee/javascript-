@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Control Mechanism</title>
+</head>
+<body>
+    <script>
+        document.write("<h3>IF STATEMENT</h3>");
+        
+        let a = 20;
+        if (a == 10) {
+            document.write("a is equal to 10");
+        } else if (a == 15) {
+            document.write("a is equal to 15");
+        } else {
+            document.write("a is not equal to 10 or 15");
+        }
+
+        document.write("<h3><hr>SWITCH STATEMENT</h3>");
+        
+        let grade = 'C';
+        let result;
+        switch (grade) {
+            case 'A':
+                result = "A Grade";
+                break;
+            case 'B':
+                result = "B Grade";
+                break;
+            case 'C':
+                result = "C Grade";
+                break;
+            default:
+                result = "No Grade";
+        }
+        document.write(result);
+
+        document.write("<h3><br><hr>LOOPING</h3>");
+        document.write("<i>Types of loops:</i><br>");
+        document.write("1. For loop<br>");
+        document.write("2. While loop<br>");
+        document.write("3. Do-while loop<br>");
+        document.write("4. For-in loop<br>");
+
+        document.write("<h4>1. For loop</h4>");
+        document.write("<p>It is used when we know how many times the loop is going to be executed.</p>");
+        
+        for (let i = 0; i <= 5; i++) {
+            document.write("The number is " + i + "<br>");
+        }
+
+        document.write("<h4><center>2. While loop</center></h4>");
+        document.write("<p>It iterates as long as the condition is true. Used when the number of iterations is not known.</p>");
+        
+        let i = 2;
+        while (i <= 5) {
+            document.write("The number is " + i + "<br>");
+            i++;
+        }
+
+        document.write("<h4><center>3. Do-while loop</center></h4>");
+        document.write("<p>This loop will execute the block of code ONCE, and then repeat as long as the specified condition is true.</p>");
+        
+        i = 6;
+        do {
+            document.write("Value of i: " + i + "<br>");
+            i++;
+        } while (i < 10);
+
+        document.write("<h3>BREAK STATEMENT</h3>");
+        
+        for (i = 0; i <= 10; i++) {
+            if (i == 8) {
+                break;
+            }
+            document.write("The number is " + i + "<br>");
+        }
+
+        document.write("<h3>FOR...IN STATEMENT</h3>");
+        
+        let mycars = ["Saab", "Volvo", "BMW"];
+        for (let x in mycars) {
+            document.write(mycars[x] + "<br>");
+        }
+    </script>
+</body>
+</html>
