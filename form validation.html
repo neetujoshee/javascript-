@@ -1,0 +1,243 @@
+<!--If someone is entering a credit card, phone number, zip code, similar information you want to be able to ensure that the input is all numbers.
+The quickest way to check if an input's string value is all numbers is to use a regular expression /^[0-9]+$/ that will only match if the string is all numbers and is at least one character long.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checking for all number</title>
+</head>
+<body>
+    <script type="text/javascript">
+    function allnumber(){
+        let pattern=/^[0-9]+$/;   //big bracket make sure
+        let num=document.getElementById("num").value;
+        if(num.match(pattern)){   //matches regexp againt a string. string.match(regexp)
+            alert("valid entry");
+        }
+        else{
+            alert("invalid entry");
+            document.getElementById("num").value=" "; // Clears the field on invalid entry     *both not necessary on valid but can put outside of else to apply for all.*
+           document.getElementById("num").focus();   //refocuses the field
+        }    
+    }
+</script>
+<form>
+    enter no: <input type="text" id="num" name="num">
+    <input type="button" value="Done" onclick="allnumber()"> <br> <br>
+</form>
+
+
+
+
+
+
+
+<!--2.checking for all letters-->
+<script type="text/javascript">
+  //If we wanted to see if a string contained only letters we need to specify an expression that allows for both lowercase and uppercase letters: /^[a-zA-Z]+$/
+
+  function allletters(){
+    let pattern=/^[a-zA-Z]+$/;
+    let letters=document.getElementById("letters").value;
+    if(letters.match(pattern)){
+        alert("valid entry");
+    }
+    else{
+        alert("invalid entry");
+    }
+  }
+</script>
+<form>
+    enter name: <input type="text" id="letters" name="letters">
+    <input type="button" value="submit" onclick="allletters()"> <br> <br>
+</form>
+
+<!--3.letter and number validation; alphanumeric only: /^[0-9a-zA-Z]+$-->
+
+
+
+
+
+<h2> length restriction</h2>
+
+<!--Being able to restrict the number of characters a user can enter into a field is one of the best ways to prevent bad data.-->
+
+<body>
+    <script type="text/javascript">
+        function validate(){
+        var  minlen=7;
+        var maxlen=10;
+        var input = document.getElementById("myInput").value;
+        if(input.length>=minlen){
+            alert("valid entry");
+        }
+        else{
+            alert("Please enter a value between 7 and 30 characters");
+        }
+    }
+    </script>
+    <form>
+        <input type="text" id="myInput" name="myInput">
+        <button type="button" onclick="validate()">check</button>
+
+
+
+<h2> Selection mode</h2>
+<!--By making the first option of your select input something like "Please Choose" you can spur the user to both make a selection
+ and allow you to check to see if the default option "Please Choose" is still selected when he/she submit the form.-->
+
+    <script type="text/javascript">
+        function validate(){
+         var sel = document.getElementById("mySelect").selectedIndex;
+         var v=document.getElementById("mySelect").options[sel].text;
+         if(v=="please choose"){
+            alert("you must choose the country")
+         }
+         else{
+            alert("your country is "+v);
+         }
+        }
+    </script>
+    <form>
+      select a country: <select id="mySelect">
+         <option>please choose</option>
+         <option>nepal</option>
+         <option>newzealand</option>
+         <option>switzerland</option>
+      </select>
+
+      <input type="button" onclick="validate()" value="check"/>
+      
+    </form>
+ </body>
+ </html>
+
+ <!--var sel = document.getElementById('mySelect').selectedIndex;
+This line gets the index of the selected option in the dropdown list with the ID 'mySelect'.
+ The index refers to the position of the selected option within the list, starting from 0 for the first option.
+
+var v = document.getElementById('mySelect').options[sel].text;
+This line retrieves the text of the selected option using the index obtained in the previous line.
+ The text property refers to the visible content of the option in the dropdown.
+
+If "Nepal" is selected, sel will be 1, and v will be "Nepal".
+If "Please Choose" is selected, sel will be 0, and v will be "Please Choose" which triggers an alert.-->
+
+
+
+
+
+<h2> VALIDATING RADIO BUTTONS</h2>
+
+<!--Radio buttons are used if we want to choose any one out of many options such as gender.
+    In such case any one of the radio button must be selected.-->
+        <script type="text/javascript">
+            function validate(){
+                var radio = document.getElementsByName("gender");
+                if(radio[0].checked==false && radio[1].checked==false){
+                    alert("please select one!")
+                }
+                else if(radio[0].checked==true){
+                    alert("male");
+                }
+                else{
+                    alert("female");
+                }
+            }
+        </script>
+        <form>
+            select a gender: <input type="radio" name="gender">
+            <label>male</label>
+            <input type="radio" name="gender">female
+            <input type="button" onclick="validate()" value="done";
+        </form>
+
+
+
+
+        
+
+     <h2> Email validation </h2>
+     <!--1. A combination of letters, numbers, periods, hyphens, plus signs, and/or underscores
+2. The at symbol @
+3. A combination of letters, numbers, hyphens, and/or periods
+4. A period
+5. The top level domain (com, net, org, us, gov, ...) 2 to 4 char-->
+
+    <script type="text/javascript">
+        function validateEmail() {
+            var patt=/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+            var email = document.getElementById("email").value;
+            if(email.match(patt)){
+                alert("Valid Email");
+            }
+            else{
+                alert("invalid email");
+            }
+        document.getElementById("email").value=" ";
+        document.getElementById("email").focus();
+        }
+    </script>
+    <form>
+          enter email: <input type="text" id="email">
+          <input type="button" value="check" onclick="validateEmail()">
+    </form> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+    </html>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
