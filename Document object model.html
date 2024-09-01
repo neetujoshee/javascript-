@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+<span>
+        Document object model is a platform and language neutral interface that will allow
+        <br> programs and sripts to dynamically access and update the content,structure and 
+        <br> style the document.
+    </span>
+    <hr>
+    <h3> HTML DOM</h3>
+    <p1> HTML DOM defines a standard set of objects fot html, and standard way to access and manipulate
+        <br> HTML documents. 
+        Html elements along with texts can be accessed through the DOM and the contents 
+        <br> can be modified ot deleted and new elements can be created.
+    </p1>
+<hr>
+    <h2> ACCESSING FIELD BY DOCUMENT OBJECT</h2><br>
+    SYNTAX: document.form1.name.value<br>
+    document: root element which represent html doc. <br>
+    form1: name of the form. <br>
+    name: attibute of input text. <br>
+    value: property that returns the value of input text.<br>
+    <br>
+    <script type="text/javascript">
+        function printvalue(){
+            var name=document.form1.name.value;
+            alert("Welcome:"+name);
+        }
+    </script>
+    <form name="form1">
+        enter name: <input type="text" name="name"/>
+        <input type="button" onclick="printvalue()" value="done"/>
+    </form>
+<hr>
+
+
+
+
+<h2> getElementById()</h2>
+<span> it retuns the element of the specified id.</span> <br> <br>
+</span>
+<script type="text/javascript">
+    function getcube()
+    {
+        var number=document.getElementById("number").value;
+        alert(number*number*number);
+    }
+</script>
+<form>
+    Enter number:<input type="text" id="number"/>
+    <input type="button" onclick="getcube()" value="Done"/> 
+    </form>
+<hr> 
+
+
+
+
+<h2> getElementByClassName()<h2>
+    It is use for selecting or getting the elements through their class name value.<br>
+    It returns array like object that consist of all the elements
+    <br> having specified classname.search whole doc and return only those which match the specified class name.<br><br>
+</h2>
+    <div class="Class"> 
+        This is a simple class implementation.<br>
+        it represents class.<br> <br>
+        </div> 
+        <script type="text/javascript"> 
+        var x=document.getElementsByClassName('Class'); 
+        document.write("On calling x, it will return an array: <br>"+x); 
+        </script>
+<hr>
+
+
+
+
+<h2> getElementByName()</h2>
+returns all the element of specified name. <br> <br>
+<script type="text/javascript">
+function totalelements()
+{
+var allgenders=document.getElementsByName("gender");
+document.write(allgenders);
+    alert("total genders:"+allgenders.length);
+}
+</script>
+<form>
+    Male: <input type="radio" name="gender" value="male">
+   Female: <input type="radio" name="gender" value="female">
+<input type="button" onclick="totalelements()" value="Done">
+</form> 
+<hr>
+
+
+
+<h2> getElementsByTagName()</h2>
+returns all elements of specified tag.<br>
+SYNTAX: document.getElementsByTagName("name") <br> <br>
+
+<script type="text/javascript"> 
+    function counth2(){ 
+    var totalh2=document.getElementsByTagName("h2"); 
+    alert("total h2 tags are: "+totalh2.length); 
+    } 
+    function counth3(){ 
+    var totalh3=document.getElementsByTagName("h3"); 
+    alert("total h3 tags are: "+totalh3.length); 
+    } 
+    function counth1(){
+        var totalh1=document.getElementsByTagName("h1");
+        alert("total h1 tags are:"+totalh1.length);
+    }
+    </script> 
+    <h3>This is h3 tag</h3> 
+    <h3>This is h3 tag</h3> 
+    <h3>This is h3 tag</h3>
+    <h1> hii baby</h1>
+    <h1> heyyy </h1> 
+    <button onclick="counth3()">count h3</button>
+    <button onclick="counth1()"> count h1</button>
+
+
+
+
+
+<h2> javascript- innerText property</h2>
+The innerText property can be used to write the dynamic text on the html
+document. <br> 
+Text will not be interpreted as html text but a normal text.
+<br> It is used in web pages to generate dynamic content such as writing the
+validation message, password strength etc.
+<script type="text/javascript" > 
+    function validate() { 
+    var msg; 
+    var password= document.myform.userPass.value.length; // to update password
+    if(password.length > 5)
+    { 
+    msg="good"; 
+    } 
+    else
+    { 
+    msg="poor"; 
+    } 
+    document.getElementById('mylocation').innerText=msg; 
+    } 
+</script> 
+</head>
+    <form name="myform"> 
+    <input type="password" value="" name="userPass" onkeyup="validate()"> 
+    <input type="button" value="done" onclick="validate()"/> 
+    </form>
+    <div id="mylocation"> </div> <!-- to display the validation msg-->
+<hr>
+
+
+    <h2> JavaScript-innerHTML property</h2>
+    <script>
+        var flag = true; 
+        function commentform() { 
+            var cform = "<form action='Comment'>" +
+                        "Enter Name:<br>" +
+                        "<input type='text' name='name'/><br/>" +
+                        "Enter Email:<br>" +
+                        "<input type='email' name='email'/><br>" +
+                        "Enter Comment:<br/>" +
+                        "<textarea rows='5' cols='70'></textarea><br>" +
+                        "<input type='submit' value='Post Comment'/>" +
+                        "</form>";
+            if (flag) { 
+                document.getElementById("mylocation").innerHTML = cform; 
+                flag = false; 
+            } else { 
+                document.getElementById("mylocation").innerHTML = ""; 
+                flag = true; 
+            } 
+        } 
+    </script>
+</head>
+<body>
+    <button onclick="commentform()">Comment</button> 
+    <div id="mylocation"></div> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
