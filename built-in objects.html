@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built-in Objects</title>
+</head>
+
+
+
+<body>
+    <h2> 1.Strings</h2>
+    The string is used to manipulate a stored piece of text.<br>
+    String objects are created with new string().<br>
+    syntax: <br>
+    var txt=string;
+<script>
+    var txt="hello world!";
+    document.write(txt.length+"<br>");
+</script>
+<script>
+    var str="rocky and randhawas";
+    document.write(str.toUpperCase()+"<br>");
+</script>
+<script>
+    var str="ROCKYAURRANI";
+    document.write(str.toLowerCase()+"<br>");
+</script>
+<br>
+
+
+
+
+<h2> index Of</h2>
+<p> It is case sensitive method<br>
+the indexOf() returns the position of the first occurence of a <br>
+specified value in a string.<br>
+This method returns -1 if the value to search never occurs<br>
+SYNTAX: <br>
+string.indexOf(searchstring,start)</p>
+<script>
+/*var str="DHANGADHI";
+document.write(str.indexOf("H")+"<br>");//returns -1
+document.write(str.indexOf("d")+"<br>"); //returns 0
+// "DHANGADHI" is the entire string, and it starts at the very first character.
+//"DHANGADHI" is 0, because "DHANGADHI" starts at the beginning of the string.
+document.write(str.indexOf("I")+"<br>");*/
+
+var str="patan world!"
+document.write(str.indexOf("d")+"<br>"); //10
+document.write(str.indexOf("world")+"<br>");//6
+document.write(str.indexOf("WORLD"));//-1
+</script>
+
+
+
+
+<h2> 2. MATH OBJECT</h2>
+<P> <b> Math object allows us to perform mathematical tasks.<br>
+it includes several mathematical constants and methods.<br></b></P>
+<script>
+    document.write(math.round(4.7));
+</script>
+
+
+
+
+<h2> 3. Date objects</h2>
+it is used to compare two dates.
+<script>
+    /*var myDate=new Date();
+    myDate.setFullYear(2002,07,20); var today=new
+    Date();
+    if (myDate>today)
+{
+    alert("Today is before 15th july");
+}
+else{
+    alert("today is after 15th july");
+}
+</script> */
+<!--<input type="button" onclick="Date()" value="click here!">-->
+<script>
+    document.write("<br>");
+    var d=new Date();
+    document.write(d);
+</script>
+
+
+
+
+
+<h2> 4. Number object</h2>
+<p> this enables us to represent a numeric value.<br>
+it may be integer or floating point.</p>
+<script text="text/javascript">
+//1.toExponential(x):x is optional and rep. no. of digits after decimal point
+var num=1123.434;
+document.writeln(num.toExponential(3)+"<br>");
+
+//2.toFixed(x):decimal pachi lai roundoff garne sorts.x tei optional
+var num=12.599789;
+document.writeln(num.toFixed(2)+"<br>");
+
+    //3.toLocaleString(locales,options):returns string value ani comma haru add garne
+    var num=2343.53332;
+    document.writeln(num.toLocaleString()+"<br>");
+
+    //4.toPrecision(x optional):kati ota total digit display garne.(not after decimal)
+    var num=123.456789;
+    document.writeln(num.toPrecision(5)+"<br>");
+
+    //5.toString():returns string representation of number's value
+    var num=123.49;
+    document.writeln(num.toString(8)+"<br>"); //octal ma gayo.
+
+    //6.valueOf():returns no. value
+    var num=0/0;
+    document.writeln(num.valueOf());   //not a number
+   </script>
+
+
+
+
+
+
+<h2> 5. Boolean object </h2>
+represents value in two states true or false.
+<script> 
+    if (isObjectTrue) {
+    console.log("isObjectTrue is true!"); // This will run
+} else {
+    console.log("isObjectTrue is false!");
+}
+
+if (isObjectFalse) {
+    console.log("isObjectFalse is true!"); // This will run
+} else {
+    console.log("isObjectFalse is false!");
+}
+</script>
+
+
+
+
+<h2> 6. form tag</h2>
+<p> it represents html form.</p>
+<br> it is use to collect user input and contain input elements like text fields,
+<br> checkboxes, radiobuttons,submitbuttons and many more.<br>
+used to pass date to the server.
+<br>
+
+
+
+<h2> 7. regular expression</h2>
+<p> it describes the pattern of the character.<br>
+    syntax: var patt=new RegExp(patterns,modifiers);<br>
+    OR var patt=/pattern/modifiers;
+    <br>
+    pattern: specifies pattern of an expression
+    <br>modifiers:specify the search should be global, case sensitive etc.
+    
+    <ol> 
+        <li> i modifiers </li>
+        <li> g modifier</li>
+    </ol>
+</p>
+<script>
+    var str="is this all there is?";
+    var patt1=/is/gi;
+    document.write(str.match(patt1));
+</script>
+
+
+
+
+<h3> test() searches string for specified value and returns true or false</h3>
+<script>
+var patt1=new RegExp("e");
+document.write(patt1.test("life is not free"));
+</script>
+
+
+
+<h3> exec() searches string for specified value and returns the text of the found value.</h3>
+<script>
+    var patt1=RegExp("e");
+        document.write(patt1.exec("life is free mujii"));
+</script>
+</body>
+</html>
