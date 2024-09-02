@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        form {
+            border: 2px solid black;
+            width: 360px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px DAE;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .radio-button {
+            margin-left: 10px;
+        }
+
+        .submit-button {
+            width: 30%;
+            background-color:black;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        label[for="gender"] {
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .gender-option {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="username" class="label">Username</label>
+        <input type="text" id="username" name="username"> <br> <br>
+
+        <label for="password" class="label">Password</label>
+        <input type="password" id="password" name="password"> <br> <br>
+
+        <label for="country" class="label">Country</label>
+        <select id="country" name="country">
+            <option value="">Nepal</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Germany">Germany</option>
+            <option value="Newzealand">New Zealand</option>
+        </select> <br> <br>
+
+        <label for="gender">Gender</label>
+        <input type="radio" id="male" name="gender" value="M" class="gender-option"> M
+        <input type="radio" id="female" name="gender" value="F" class="gender-option"> F <br> <br>
+
+        <input type="submit" class="submit-button" value="Submit" onclick="validateform();">
+    </form>
+    <script>
+        function validateform() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var country = document.getElementById("country").value;
+            var male = document.getElementById("male").checked;
+            var female = document.getElementById("female").checked;
+
+            // validating username
+            var minlen = 4;
+            if (username.length < minlen) {
+                alert("Username should be at least 4 characters.");
+                return false;
+            }
+
+            // validating password
+            var patt = /^[a-zA-Z].*#$/; // must start with a letter and end with #
+            if (!password.match(patt)) {
+                alert("Password must start with a letter and end with '#'.");
+                return false;
+            }
+
+            // validating country
+            if (country === "") {
+                alert("Please select a country.");
+                return false;
+            }
+
+            // validating gender
+            if (!male && !female) {
+                alert("Please select a gender.");
+                return false;
+            }
+
+            // If all validations pass
+            alert("Form is valid!");
+            return true;
+        }
+    </script>
+</body>
+</html>
