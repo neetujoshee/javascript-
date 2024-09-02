@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing elements</title>
+</head>
+<body>
+    <h2> getElementById</h2>
+    <h1 id="heading"> HELLO EVERYONE</h1>
+    <ol>
+        <li> mango</li>
+        <li> mangoes</li>
+        <li> mangoesoadiwe</li>
+    </ol>
+<script>
+    var headingElement=document.getElementById("heading");
+    if (headingElement)
+    {
+       alert("found!!!");
+    }
+    else
+    {
+        alert("heading not found!");
+    }
+
+   //Accessing elements by tag name using getElementByTagNamr("li");
+   var listItems=document.getElementsByTagName("li");
+    listItems[0].textContent = "New Item 1";
+    listItems[1].textContent = "New Item 2";
+    listItems[2].textContent = "New Item 3";
+</script>
+</body>
+</html>
