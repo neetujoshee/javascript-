@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Handlers</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            // Click Event
+            document.getElementById("clickButton").addEventListener("click", function() {
+                alert("Button clicked!");
+            });
+
+            // Mouseover Event
+            document.getElementById("mouseoverDiv").addEventListener("mouseover", function() {
+                this.classList.add("highlight");
+                console.log("Mouse over div!");
+            });
+
+            // Mouseout Event
+            document.getElementById("mouseoverDiv").addEventListener("mouseout", function() {
+                this.classList.remove("highlight");
+                console.log("Mouse out of div!");
+            });
+
+            // Keyup Event
+            document.getElementById("keyupInput").addEventListener("keyup", function() {
+                console.log("Key up event: " + this.value);
+            });
+
+            // Keydown Event
+            document.getElementById("keydownInput").addEventListener("keydown", function() {
+                console.log("Key down event: " + this.value);
+            });
+
+            // Change Event
+            document.getElementById("changeSelect").addEventListener("change", function() {
+                console.log("Selection changed to: " + this.value);
+            });
+
+            // Submit Event
+            document.getElementById("form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form submission
+                alert("Form submitted!");
+            });
+
+            // Focus Event
+            document.getElementById("focusInput").addEventListener("focus", function() {
+                console.log("Input focused!");
+            });
+
+            // Blur Event
+            document.getElementById("blurInput").addEventListener("blur", function() {
+                console.log("Input lost focus!");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>JavaScript Event Handlers</h1>
+
+    <!-- Click Event -->
+    <button id="clickButton">Click Me</button>
+    
+    <!-- Mouseover and Mouseout Events -->
+    <div id="mouseoverDiv" style="width: 200px; height: 100px; border: 1px solid black; margin-top: 20px;">
+        Hover over this div
+    </div>
+    
+    <!-- Keyup Event -->
+    <input type="text" id="keyupInput" placeholder="Type something here...">
+    
+    <!-- Keydown Event -->
+    <input type="text" id="keydownInput" placeholder="Type something here...">
+    
+    <!-- Change Event -->
+    <select id="changeSelect">
+        <option value="Option1">Option 1</option>
+        <option value="Option2">Option 2</option>
+        <option value="Option3">Option 3</option>
+    </select>
+    
+    <!-- Submit Event -->
+    <form id="form">
+        <input type="submit" value="Submit Form">
+    </form>
+    
+    <!-- Focus and Blur Events -->
+    <input type="text" id="focusInput" placeholder="Focus on me...">
+    <input type="text" id="blurInput" placeholder="Blur me...">
+</body>
+</html>
