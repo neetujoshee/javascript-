@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+    <form>
+    <label for="username"> username</label>
+    <input type="text" id="username" name="username" required/>
+    <br> <br>
+    <label for="password"> password</label>
+    <input type="password" id="password" name="password" required/>
+    <br> <br>
+
+    <fieldset>
+    <label for="hobby"> hobbies</label>
+    <label> <input type="checkbox" name="hobby" value="travelling"> travelling</label>
+    <label> <input type="checkbox" name="hobby" id="laughing"> laughing</label>
+    <label> <input type="checkbox" name="hobby" id="dancing"> dancing</label>
+    <label> <input type="checkbox" name="hobby" id="singing"> singing</label>
+    <br> <br>
+    <input type="submit" onclick="validateform()" value="submit">
+    </form>
+    </fieldset>
+   
+    <script>
+function validateform()
+{
+    var username=document.getElementById('username').value;
+    var password=document.getElementById('password').value;
+    var hobby=document.getElementById('hobby').checked;
+//validating username
+   if(username=='')
+   {
+    alert("username is empty");
+    return false;
+   }
+//validating empty password
+var minlen=5;
+if(password.length < minlength)
+{
+    alert("password should be atleast 5 character long");
+    return false;
+}
+//validating hobby
+if(!hobby)
+{
+    alert('please check atleast one hobby');
+    return false;
+}
+return true;
+}
+</script>
+</body>
+</html>
